@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +46,7 @@ Route::get('/blog', function () {
     ];
     return view('posts', [
         'title' => 'Posts',
-        'posts' => $blog_post
+        'posts' => Post::index()
     ]);
 });
 
