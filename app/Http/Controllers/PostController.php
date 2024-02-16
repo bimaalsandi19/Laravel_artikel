@@ -15,11 +15,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('post', [
             'title' => 'Single Post',
-            'post' => Post::where('slug', $slug)->firstorFail()
+            'post' => $post
+            // 'post' => Post::where('slug', $slug)->firstorFail()
             // sama artinya
             // 'post' => Post::find($slug)
         ]);
