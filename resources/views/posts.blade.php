@@ -31,6 +31,10 @@
             @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4 mb-3">
                     <div class="card">
+                        <div class="position-absolute bg-dark text-light p-2"
+                            style="background-color: rgba(0,0,0,0.5) !important">
+                            <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                        </div>
                         <img src="https://source.unsplash.com/random/1200×400/?{{ $post->category->name }}" width="100%"
                             height="150" style="object-fit: cover" class="card-img-top"
                             alt="{{ $post->category->name }}">

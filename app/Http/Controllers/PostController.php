@@ -15,7 +15,8 @@ class PostController extends Controller
             // Untuk menampilkan dati terbaru
             // WITH NYA DIPINDAHKAN KE MODEL POST
             // 'posts' => Post::with(['author', 'category'])->latest()->get()
-            'posts' => Post::latest()->get()
+            'posts' => Post::latest()->get(),
+            'active' => 'posts'
         ]);
     }
 
@@ -23,7 +24,9 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'Single Post',
-            'post' => $post
+            'post' => $post,
+            'active' => 'posts'
+
             // 'post' => Post::where('slug', $slug)->firstorFail()
             // sama artinya
             // 'post' => Post::find($slug)

@@ -41,12 +41,16 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Category::create([
-            'name' => 'Programming',
-            'slug' => 'programming'
+            'name' => 'Web Programming',
+            'slug' => 'web-programming'
         ]);
         Category::create([
             'name' => 'Personal',
             'slug' => 'personal'
+        ]);
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
         ]);
     }
 }
