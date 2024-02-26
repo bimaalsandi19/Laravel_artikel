@@ -76,6 +76,10 @@
     @else
         <p class="text-center fs-4">No post found</p>
     @endif
+
+    <div class="d-flex justify-content-center">
+        {{ $posts->links() }}
+    </div>
     {{-- @foreach ($posts->skip() as $post)
         <article class="mb-5 border-bottom">
             <h3>
