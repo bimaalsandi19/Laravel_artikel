@@ -34,7 +34,7 @@ class PostController extends Controller
             // 'posts' => Post::latest()->filter()->get(),
 
             // cara jika requet dijalankan didalam controller
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(5)->withQueryString(),
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
             'active' => 'posts'
         ]);
     }
