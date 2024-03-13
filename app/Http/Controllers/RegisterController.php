@@ -33,6 +33,7 @@ class RegisterController extends Controller
         // dengan 2 baris
         // $request->session()->flash('success', 'Registration Successful, please login');
 
+        // 1 baris
         return redirect('/login')->with('success', 'Registration Successful, please login');
     }
 }
