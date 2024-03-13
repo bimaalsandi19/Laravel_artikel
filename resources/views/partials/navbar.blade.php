@@ -28,7 +28,7 @@
                             Welcome back, {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/das hboard"><i class="bi bi-columns-gap"></i> My
+                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-columns-gap"></i>My
                                     Dashboard</a>
                             </li>
                             <li>
