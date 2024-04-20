@@ -17,8 +17,13 @@
 
                     </form>
 
-                    <img src="https://source.unsplash.com/random/1200×400/?{{ $post->category->name }}" width="100%"
-                        height="300" style="object-fit: cover" alt="{{ $post->category->name }}">
+                    @if ($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" width="100%" height="300"
+                            style="object-fit: cover" alt="{{ $post->category->name }}" class="mb-3">
+                    @else
+                        <img src="https://source.unsplash.com/random/1200×400/?{{ $post->category->name }}" width="100%"
+                            height="300" style="object-fit: cover" alt="{{ $post->category->name }}" class="mb-3">
+                    @endif
                     {!! $post->body !!}
                 </article>
 

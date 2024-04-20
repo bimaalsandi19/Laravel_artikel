@@ -11,8 +11,13 @@
                             href="/posts?category={{ $post->category->slug }}"
                             class="text-decoration-none">{{ $post->category->name }}</a></p>
 
-                    <img src="https://source.unsplash.com/random/1200×400/?{{ $post->category->name }}" width="100%"
-                        height="300" style="object-fit: cover" alt="{{ $post->category->name }}">
+                    @if ($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" width="100%" height="300"
+                            style="object-fit: cover" alt="{{ $post->category->name }}">
+                    @else
+                        <img src="https://source.unsplash.com/random/1200×400/?{{ $post->category->name }}" width="100%"
+                            height="300" style="object-fit: cover" alt="{{ $post->category->name }}">
+                    @endif
                     {!! $post->body !!}
                 </article>
 
