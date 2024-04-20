@@ -30,8 +30,15 @@
                         <td>
                             <a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-sm btn-info"><i
                                     class="bi bi-eye"></i></a>
-                            <a href="#" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></a>
+                            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-sm btn-warning"><i
+                                    class="bi bi-pencil"></i></a> {{-- /dashboard/posts/{{ $post->slug }}/edit adalah aturan dari route resource --}}
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure ?')">
+                                    <i class="bi bi-x-circle"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
